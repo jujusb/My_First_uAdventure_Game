@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eAdventure version="2">
+  <player>
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </player>
+  <character id="Professeur" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/profdevant.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/profdos.eaa.xml" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <inactive flag="TalkToProf" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="alarmprof" />
+          <condition />
+          <activate flag="directeurDansBureau" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="Directeur" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/directeur.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Directeur dehors" />
+          <active flag="InPlayground" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="AlarmeFin" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="directeurDansBureau" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="directeur" />
+          <condition />
+          <activate flag="Directeur dehors" />
+          <condition />
+          <deactivate flag="directeurDansBureau" />
+          <condition />
+          <activate flag="talkToDirector" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="Guille" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/guille.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <character id="José" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/jose.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <scene id="Classroom" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="Office">
+      <asset type="background" uri="assets/background/ClassFrontBackground.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="1587" y="390" width="99" height="385" hasInfluenceArea="no" idTarget="Corridor" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <active flag="TalkToProf" />
+        </condition>
+      </exit>
+    </exits>
+    <objects>
+      <object-ref idTarget="Smartphone" x="941" y="1020" scale="0.09630407" layer="1" hasInfluenceArea="no" />
+    </objects>
+    <characters>
+      <character-ref idTarget="Professeur" x="818" y="752" scale="0.1743346" orientation="2" layer="0" hasInfluenceArea="no" />
+    </characters>
+  </scene>
+  <scene id="ToiletteFilles" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Bathroom.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="722" y="131" width="373" height="810" hasInfluenceArea="no" idTarget="Corridor" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+    </exits>
+  </scene>
+  <scene id="Corridor" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/CorridorBackground.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="111" y="290" width="112" height="644" hasInfluenceArea="no" idTarget="Classroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+      <exit rectangular="yes" x="551" y="485" width="301" height="201" hasInfluenceArea="no" idTarget="Stairs" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+      <exit rectangular="yes" x="1066" y="444" width="41" height="307" hasInfluenceArea="no" idTarget="ToiletteGarçon" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+      <exit rectangular="yes" x="975" y="456" width="28" height="277" hasInfluenceArea="no" idTarget="ToiletteFilles" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+    </exits>
+  </scene>
+  <scene id="ToiletteGarçon" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Bathroom.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="707" y="122" width="394" height="813" hasInfluenceArea="no" idTarget="Corridor" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+    </exits>
+  </scene>
+  <scene id="Stairs" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/StairsBackground.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="1767" y="219" width="230" height="734" hasInfluenceArea="no" idTarget="Bureau" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+      <exit rectangular="no" x="788" y="116" width="669" height="760" hasInfluenceArea="no" idTarget="Corridor" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <point x="788" y="202" />
+        <point x="1431" y="116" />
+        <point x="1457" y="813" />
+        <point x="1135" y="876" />
+      </exit>
+      <exit rectangular="no" x="167" y="253" width="880" height="709" hasInfluenceArea="no" idTarget="Playground" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <point x="167" y="309" />
+        <point x="769" y="253" />
+        <point x="1047" y="873" />
+        <point x="477" y="962" />
+        <condition>
+          <active flag="talkToDirector" />
+        </condition>
+        <effect>
+          <activate flag="returnback" />
+          <condition />
+          <activate flag="InPlayground" />
+          <condition />
+        </effect>
+      </exit>
+    </exits>
+  </scene>
+  <scene id="Bureau" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Espace-bureau.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="763" y="303" width="130" height="375" hasInfluenceArea="no" idTarget="Stairs" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+    </exits>
+    <characters>
+      <character-ref idTarget="Directeur" x="373" y="1134" scale="0.3967285" orientation="0" layer="0" hasInfluenceArea="no" />
+    </characters>
+  </scene>
+  <scene id="Playground" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/PlaygroundBackground.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="1380" y="510" width="276" height="235" hasInfluenceArea="no" idTarget="Stairs" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <inactive flag="returnback" />
+        </condition>
+      </exit>
+    </exits>
+    <characters>
+      <character-ref idTarget="Professeur" x="764" y="797" scale="0.1698277" orientation="0" layer="3" hasInfluenceArea="no" />
+      <character-ref idTarget="Directeur" x="523" y="829" scale="0.2105057" orientation="0" layer="2" hasInfluenceArea="no" />
+      <character-ref idTarget="Guille" x="1716" y="841" scale="0.1501294" orientation="0" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="José" x="1812" y="849" scale="0.1333596" orientation="0" layer="0" hasInfluenceArea="no" />
+    </characters>
+  </scene>
+  <slidescene id="Intro" start="yes" idTarget="Classroom" destinyX="-2147483648" destinyY="-2147483648" transitionTime="0" transitionType="1" next="new-scene" class="accesible" type="cutscene">
+    <documentation>
+    </documentation>
+    <effect>
+      <show-text x="300" y="300" frontColor="#FFFFFFFF" borderColor="#000000FF" uri="">The alarm is rining 
+You have to go out!!!</show-text>
+      <condition />
+    </effect>
+    <resources name="No name">
+      <asset type="slides" uri="assets/animation/intro.eaa.xml" />
+    </resources>
+    <name>
+    </name>
+  </slidescene>
+  <slidescene id="Final" start="no" next="end-chapter" class="accesible" type="cutscene">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="slides" uri="assets/animation/final.eaa.xml" />
+    </resources>
+    <name>
+    </name>
+  </slidescene>
+  <object id="Smartphone" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/smartphone.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <consume-object idTarget="Smartphone" />
+          <condition />
+        </effect>
+      </examine>
+      <grab needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <remove-element idTarget="Smartphone" />
+          <condition />
+          <generate-object idTarget="Smartphone" />
+          <condition />
+        </effect>
+      </grab>
+      <give-to idTarget="José" needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <consume-object idTarget="Smartphone" />
+          <condition />
+        </effect>
+      </give-to>
+    </actions>
+  </object>
+  <graph-conversation id="alarmprof">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>L'alarme sonne</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="482" editor-y="50">
+      <speak-char idTarget="Professeur">
+        <resources name="No name" />
+        <text>Tout le monde reste calme. Que dois-t-on faire ?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+    <option-node nodeindex="2" question="Alarm" keepShowing="yes" preListening="yes" editor-x="1050" editor-y="65" x="1050" y="65">
+      <speak-player>
+        <text>On reste tous ici</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>On sort tous dehors</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="4" />
+    </option-node>
+    <dialogue-node nodeindex="3" editor-x="1270" editor-y="65">
+      <speak-player>
+        <resources name="No name" />
+        <text>Tu es fou !!!</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="1270" editor-y="259">
+      <speak-player>
+        <resources name="No name" />
+        <text>Oui on sort. Allons-y de suite!!!</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="TalkToProf" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="AlarmeFin">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="Directeur">
+        <resources name="No name" />
+        <text>C'est la fin de l'alarme. Vous pouvez retourner en classe.</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-cutscene idTarget="Final" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="directeur">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>Allez sortez. L'alarme a sonnée, monsieur le directeur!!!</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="285" editor-y="50">
+      <speak-char idTarget="Directeur">
+        <resources name="No name" />
+        <text>D'accord j'arrive. Sortons !!!</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="returnback" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <completable id="class" repeatable="false" type="completable">
+    <start-milestone type="SCENE" targetId="Intro" />
+    <end-milestone type="SCENE" targetId="Stairs" />
+    <progress type="SUM">
+      <milestone type="CHARACTER" targetId="Professeur" />
+    </progress>
+    <score type="VARIABLE" method="SINGLE" id="SCORE" />
+  </completable>
+  <completable id="telephone" repeatable="false" type="completable">
+    <start-milestone type="SCENE" targetId="" />
+    <end-milestone type="SCENE" targetId="" />
+    <progress type="SUM">
+      <milestone type="ITEM" targetId="Smartphone" />
+    </progress>
+    <score type="VARIABLE" method="SINGLE" id="TELEPHONE" />
+  </completable>
+  <completable id="directeur1" repeatable="false" type="completable">
+    <start-milestone type="SCENE" targetId="Bureau" />
+    <end-milestone type="SCENE" targetId="Playground" />
+    <progress type="SUM">
+      <milestone type="CHARACTER" targetId="Directeur" />
+    </progress>
+    <score type="VARIABLE" method="SINGLE" id="SCORE" />
+  </completable>
+</eAdventure>
